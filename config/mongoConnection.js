@@ -1,5 +1,4 @@
 const MongoClient = require("mongodb").MongoClient;;
-const server = require("./production")
 
 const settings = {
     mongoConfig: {
