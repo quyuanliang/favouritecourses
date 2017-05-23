@@ -70,6 +70,8 @@ require('./routes/passport')(passport);
 configRoutes(app);
 
 // 监听端口，启动程序
-app.listen(process.env.PORT || 5000, function () {
-  console.log(`${pkg.name} listening on`);
+
+let port = process.env.PORT || 5000;
+app.listen(port, function () {
+  console.log("1111111");
 });
