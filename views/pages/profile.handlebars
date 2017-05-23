@@ -1,0 +1,83 @@
+<body>
+<style type="text/css">
+    .btn {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 18px;
+        background-color: rgb(70, 175, 95);
+        background-color: rgba(70, 175, 95, 0.9);
+        color: #fff;
+        border-radius: 2px;
+        width: 180px;
+        height: 38px;
+        margin-top: 40px;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        -moz-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        cursor: pointer;
+    }
+</style>
+
+<div style="margin-left: auto;margin-right: auto;margin-top: 80px;width: 300px;text-align: center;background-color: rgba(50,50,50,0.6);padding: 20px 40px 60px 40px;position: relative;width: 380px;height: 600px">
+    <div class="title" style="margin-right: 65px;">
+        <link rel="stylesheet" href="/public/profile.css">
+
+        <h1 style="font-size: 40px;color: #fff;">Hello, {{user.username}}!</h1>
+    </div>
+
+    <div class="profile" id="profile" style="margin-right:20px">
+        <form action="/user/chgprofile" method="post">
+            <input value="{{user._id}}" name="uid" type="hidden">
+            <div>
+                <h2 style="margin-right:165px;color:#ccc;font-size: 20px;font-weight: 600;">Username: </h2>
+                    <input value="{{user.username}}" name="username" style="width:240px;border-bottom: 1px solid rgb(227,227,227);">
+            </div>
+            <div>
+                <h2 style="margin-right:210px;color:#ccc;font-size: 20px;font-weight: 600;">Email: </h2>
+                    <input value="{{user.email}}" placeholder="email" name="email" style="width:240px; border-bottom: 1px solid rgb(227,227,227);">
+            </div>
+            <div>
+                <h2 style="margin-right:170px;color:#ccc;font-size: 20px;font-weight: 600;">University:</h2>
+                    <input value="{{user.university}}" placeholder="university" name="university" style="width:240px; border-bottom: 1px solid rgb(227,227,227);">
+            </div>
+            <div>
+                <h2 style="margin-right:210px;color:#ccc;font-size: 20px;font-weight: 600;">Major:</h2>
+                    <input value="{{user.major}}" placeholder="major" name="major" style="width:240px; border-bottom: 1px solid rgb(227,227,227);">
+            </div>
+
+            <div>
+                <h2 style="margin-right:155px;color:#ccc;font-size: 20px;font-weight: 600;">My Favorite:</h2>
+            </div>
+
+            <div>
+                <h2 style="color:#ccc;font-size: 20px;font-weight: 600;"></h2>
+                    {{#if user.favoriteCourses}}
+                        {{#each user.favoriteCourses}}
+                            <li style="color:snow">{{this}}</li>
+                        {{/each}}
+                    {{/if}}
+            </div>
+
+            <div>
+                <button class="btn" type="submit" value="update">update profile</button>
+            </div>
+        </form>
+
+        {{#each user.favoriteCourses}}
+        <tr>
+            <td>{{name}}</td>
+            <td>{{university}}</td>
+        </tr>
+        {{/each}}
+    </div>
+</div>
+
+<script type="text/javascript">
+    var num = parseInt(Math.random() * 5 + 1);
+    document.body.style.backgroundImage = "url(http://cdn.maxjia.com/image/p_0" + num + ".jpg)";
+
+</script>
+
+</body>

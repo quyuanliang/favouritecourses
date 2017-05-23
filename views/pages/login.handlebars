@@ -1,0 +1,523 @@
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+<style type="text/css">
+    body {
+        padding: 0px;
+        margin: 0px;
+        background-color: rgb(33, 33, 33);
+        background-image: url('');
+        background-size: cover;
+        backgrond-attachment: fixed;
+        background-position: center;
+        position: relative;
+        color: #ccc;
+        font: 12px/1.5 Arial, 'Droid Sans', 'Hiragino Sans GB', 'Microsoft YaHei';
+    }
+
+    a {
+        color: #777;
+    }
+
+    a:hover,
+    a:focus {
+        color: #fff;
+    }
+
+    #phoneLog:hover,
+    #webLog:hover {
+        cursor: pointer;
+    }
+
+    .top-radius {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+
+    .bottom-radius {
+        border-top-left-radius: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+
+    .all-radius {
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+    }
+
+    .login-input {
+        background-color: #fff;
+        padding: 11px 10px 11px 13px;
+        display: block;
+        background-color: rgba(255, 255, 255, 0.95);
+        border: 1px solid #fff;
+        margin: 0;
+        border: 0;
+        font-family: Helvetica, STHeiti;
+        font-size: 12px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 300px;
+    }
+
+    .login-input:focus {}
+
+    .breath {
+        filter: alpha(opacity=50);
+        -moz-opacity: 0.5;
+        opacity: 0.5;
+        -webkit-animation-name: breath;
+        -webkit-animation-duration: 8s;
+        -webkit-animation-timing-function: ease-in-out;
+        -webkit-animation-iteration-count: infinite;
+    }
+    
+
+    @-webkit-keyframes 'breath' {
+        from {
+            filter: alpha(opacity=1);
+            -moz-opacity: 0.01;
+            opacity: 0.01;
+        }
+        30% {
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+        }
+        70% {
+            filter: alpha(opacity=50);
+            -moz-opacity: 0.5;
+            opacity: 0.5;
+        }
+        to {
+            filter: alpha(opacity=1);
+            -moz-opacity: 0.01;
+            opacity: 0.01;
+        }
+    }
+
+    @-moz-keyframes fullexpand {
+        0% {
+            width: 0px;
+        }
+        15% {
+            width: 90%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    @-webkit-keyframes fullexpand {
+        0% {
+            width: 0px;
+        }
+        15% {
+            width: 90%;
+        }
+        100% {
+            width: 100%;
+        }
+    }
+
+    .trans {
+        -webkit-transition: color 0.3s ease;
+        -moz-transition: color 0.3s ease;
+        -ms-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+        transition: color 0.3s ease;
+    }
+
+    *,
+    *:active,
+    *:focus {
+        outline: 0;
+        outline-style: none;
+        outline-width: 0;
+        -moz-outline-width: 0;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        text-decoration: none;
+    }
+
+    .login-in-btn {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 38px;
+        background-color: rgb(70, 175, 95);
+        background-color: rgba(70, 175, 95, 0.9);
+        color: #fff;
+        border-radius: 2px;
+        width: 300px;
+        height: 38px;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        -moz-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        cursor: pointer;
+        border: none;
+    }
+
+    .login-in-btn:focus,
+    .login-in-btn:hover {
+        background-color: rgb(90, 225, 125);
+        background-color: rgba(90, 225, 125, 0.9);
+    }
+
+    .sign-up-btn {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 38px;
+        background-color: rgb(41, 119, 186);
+        background-color: rgba(41, 119, 186, 0.9);
+        color: #fff;
+        border-radius: 2px;
+        width: 300px;
+        height: 38px;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        -moz-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        cursor: pointer;
+    }
+
+    .sign-up-btn:focus,
+    .sign-up-btn:hover {
+        background-color: rgb(61, 139, 226);
+        background-color: rgba(61, 139, 226, 0.9);
+    }
+
+    .login-reply {
+        color: #ec3627;
+    }
+
+    .sign-up-btn-small {
+        font-family: Helvetica, STHeiti;
+        font-size: 13px;
+        text-align: center;
+        line-height: 35px;
+        background-color: rgba(41, 119, 186, 0.8);
+        color: #fff;
+        border-radius: 2px;
+        margin-right: 15px;
+        margin-top: 7px;
+        width: 60px;
+        height: 35px;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        -moz-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        float: left;
+    }
+
+    .sign-in-btn-small {
+        font-family: Helvetica, STHeiti;
+        font-size: 13px;
+        text-align: center;
+        line-height: 35px;
+        background-color: rgba(255, 255, 255, 0.3);
+        color: #fff;
+        border-radius: 2px;
+        margin-right: 15px;
+        margin-top: 7px;
+        width: 60px;
+        height: 35px;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        -moz-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        float: left;
+    }
+
+    .footer {
+        color: #777;
+    }
+
+    #nav-bar {
+        width: 100%;
+        background-color: rgba(10, 10, 10, 0.15);
+        height: 50px;
+        position: absolute;
+        top: 0px;
+    }
+
+    .nav-head {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        height: 50px;
+    }
+
+    .selectLog:after {
+        clear: both;
+        content: "\200B";
+        display: block;
+        height: 0;
+    }
+
+    .selectLog {
+        background-color: rgba(50, 50, 50, 0.6);
+        border-bottom: 46px solid rgba(50, 50, 50, 1);
+    }
+
+    .selectLog>div:hover {
+        cursor: pointer;
+        color: white;
+    }
+</style>
+
+<style>
+    #phoneLog {
+        float: left;
+        border-bottom: 1px solid #fff;
+        font-size: 15px;
+        padding: 10px 0 10px 0;
+        width: 190px;
+        color: #fff;
+    }
+
+    #webLog {
+        float: right;
+        border-bottom: 1px solid rgba(50, 50, 50, 0);
+        font-size: 15px;
+        padding: 10px 0 10px 0;
+        width: 189px;
+    }
+
+    .selectLog .v-line {
+        float: left;
+        width: 1px;
+        height: 43px;
+        background-color: #323232;
+    }
+
+    .other-wrap {
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .other-wrap .social-signup {
+        float: left;
+    }
+
+    .other-wrap .social-signup span {
+        vertical-align: middle;
+    }
+
+    .other-wrap .social-signup a {
+        display: inline-block;
+        color: #ccc;
+        margin-left: 10px;
+    }
+
+    .other-wrap .social-signup i {
+        vertical-align: middle;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+    }
+
+    .other-wrap .social-signup i:hover {
+        color: #fff;
+    }
+
+    .other-wrap .forget-pwd {
+        float: right;
+    }
+
+    .other-wrap .forget-pwd a {
+        margin-left: 3px;
+        margin-top: 20px;
+        color: #ccc;
+        font-size: 12px;
+        -webkit-transition: all 300ms ease-in-out;
+        -moz-transition: all 300ms ease-in-out;
+        transition: all 300ms ease-in-out;
+    }
+
+    .other-wrap .forget-pwd a:hover {
+        color: #fff;
+    }
+</style>
+
+<body id="particles-js">
+
+<script src="http://cdn.maxjia.com/js/particles.min.js"></script>
+<script type="text/javascript">
+        particlesJS('particles-js', {
+                "particles": {
+                    "number": {
+                        "value": 110,
+                        "density": {
+                            "enable": true,
+                            "value_area": 800
+                        }
+                    },
+                    "color": {
+                        "value": "#ffffff"
+                    },
+                    "shape": {
+                        "type": "circle",
+                        "stroke": {
+                            "width": 0,
+                            "color": "#000000"
+                        },
+                        "polygon": {
+                            "nb_sides": 5
+                        },
+                        "image": {
+                            "src": "img/github.svg",
+                            "width": 100,
+                            "height": 100
+                        }
+                    },
+                    "opacity": {
+                        "value": 0.5,
+                        "random": false,
+                        "anim": {
+                            "enable": false,
+                            "speed": 1,
+                            "opacity_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "size": {
+                        "value": 1,
+                        "random": true,
+                        "anim": {
+                            "enable": false,
+                            "speed": 20,
+                            "size_min": 0.1,
+                            "sync": false
+                        }
+                    },
+                    "line_linked": {
+                        "enable": true,
+                        "distance": 40,
+                        "color": "#fff",
+                        "opacity": 1,
+                        "width": 1
+                    },
+                    "move": {
+                        "enable": true,
+                        "speed": 3,
+                        "direction": "none",
+                        "random": false,
+                        "straight": false,
+                        "out_mode": "out",
+                        "attract": {
+                            "enable": false,
+                            "rotateX": 600,
+                            "rotateY": 1200
+                        }
+                    }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": {
+                        "onhover": {
+                            "enable": true,
+                            "mode": "grab"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
+                        },
+                        "resize": true
+                    },
+                    "modes": {
+                        "grab": {
+                            "distance": 120,
+                            "line_linked": {
+                                "opacity": 1
+                            }
+                        },
+                        "bubble": {
+                            "distance": 400,
+                            "size": 40,
+                            "duration": 2,
+                            "opacity": 8,
+                            "speed": 3
+                        },
+                        "repulse": {
+                            "distance": 300
+                        },
+                        "push": {
+                            "particles_nb": 4
+                        },
+                        "remove": {
+                            "particles_nb": 2
+                        }
+                    }
+                },
+                "retina_detect": true,
+                "config_demo": {
+                    "hide_card": false,
+                    "background_color": "#b61924",
+                    "background_image": "",
+                    "background_position": "50% 50%",
+                    "background_repeat": "no-repeat",
+                    "background_size": "cover"
+                }
+            }
+
+        );
+    </script>
+    <script type="text/javascript">
+            var num = parseInt(Math.random() * 5 + 1);
+            document.body.style.backgroundImage = "url(http://cdn.maxjia.com/image/p_0" + num + ".jpg)";
+        </script>
+
+
+<div style="z-index: 1000;position: absolute;top: 100px;left :50%;margin: 0 0 0 -190px;">
+    <div style="margin-left: auto;margin-right: auto;width: 300px;text-align: center;background-color: rgba(50,50,50,0.6);padding: 20px 40px 60px 40px;position: relative;width: 380px;height: 500px">
+
+        <div class="selectLog" style="position: absolute;top:20px; left: 0px;top: -44px;width: 460px;margin-top:20px;">
+        <div id="phoneLog" onclick="show_div()" style="position: absolute;width: 460px;">Login</div>
+        </div>
+
+        <img src="https://mark.trademarkia.com/logo-images/the-trustees-of-the-stevens-institute-of-technology/s-stevens-institute-of-technology-the-innovation-university-1870-85100692.jpg" style="width:120px;margin-bottom: 5px;width: 320px">
+        <div style="margin-top: 5px;margin-bottom: 20px;color:#ccc;font-size: 14px;font-weight: 600;;position: absolute;width: 380px">Course Friend</div>
+
+
+        <div class="login-page">
+            {{#if message}}
+                <div style="margin-top: 40px" class="alert-danger">{{message}}</div>
+                <br>
+            {{/if}}
+            <div class="col-sm-12 col-md-4">
+                <form  id="login-form" method="post"  style="font-size: 12px;" action="/user/login">
+                    <input id="lastUrl" name="lastUrl" value="{{theUrl}}" hidden>
+                    <input id="user-name" name="username" type="text" placeholder="username" style="display: block;width:315px;margin-top:30px;margin-left:30px; border-bottom: 1px solid rgb(227,227,227);" class="form-control" value="" required="">
+                    <div id="error-username"></div>
+                    <input id="user-password" name="password" type="password" style="width:315px;margin-top:20px; border-bottom: 1px solid rgb(227,227,227);" class="form-control" placeholder="password" value="" required="">
+                    <div id="error-password"></div>
+                    <div style="margin-left: 0px;margin-bottom: 5px;color:#ec3627">
+
+                    </div>
+                    <button id="login-button" class="login-in-btn" style="margin-top: 20px;width: 320px;" type = "submit">
+                        Login
+                    </button>
+                    <div class="sign-up-btn" onclick="document.location.href = '/user/register'" style="margin-left:30px; margin-top: 20px;width: 320px;">
+                        Register
+                    </div>  
+                </form>
+            </div>
+        </div>
+
+        <div style="position: absolute;right:40px;bottom: 20px;"><a href="javascript:history.go(-1)" style="color: rgb(152, 152, 152)">Back</a></div>
+    </div>
+</div>
+
+</body>
+

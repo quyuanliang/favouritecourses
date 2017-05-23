@@ -1,0 +1,49 @@
+<style type="text/css">
+    .btn {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 18px;
+        background-color: rgb(70, 175, 95);
+        background-color: rgba(70, 175, 95, 0.9);
+        color: #fff;
+        border-radius: 2px;
+        width: 178px;
+        height: 38px;
+        top: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        -moz-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        cursor: pointer;
+}
+</style>
+
+<div style="z-index: 1000;position: absolute;top: 100px;left :50%;margin: 0 0 0 -190px;">
+    <div style="margin-left: auto;margin-right: auto;width: 300px;text-align: center;background-color: rgba(50,50,50,0.6);padding: 20px 40px 60px 40px;position: relative;width: 380px;height: 500px">
+
+        <img src="http://rotflpictures.com/wp-content/uploads/2012/06/real-apple-logo-funny-picture-17061.jpg"
+            style="width:120px;margin-bottom: 5px;width: 300px">
+            <div style="margin-top: 5px;margin-bottom: 20px;color:#ccc;font-size: 20px;font-weight: 600;;position: absolute;width: 380px">Course Friend</div>
+
+            <div class="main-page">
+                <div class="form">
+                    <form id="main-form" method="post" style="font-size: 12px;" action="/search/searchSchool">
+                        <br> {{#if message}}
+                        <div class="alert alert-danger">{{message}}</div>
+                        {{/if}}
+                        <input type="text" class="form-control" id="schoolname" name="schoolname" placeholder="Input SIT/MIT as sample" style="display: block;font-size: 30px;margin-top: 20px;margin-left: 15px; width:355px;height: 50px;border-bottom: 1px solid rgb(227,227,227);"
+                             value="" required="">
+                        <div id="error-username"></div>
+                        <button id="searchschool-button" type="submit" class="btn" style="line-height: 8px; margin-top: 30px;">Search</button>
+                    </form>
+                </div>
+            </div>
+
+            <div style="position: absolute;right:40px;bottom: 20px;"><a href=" " style="color: rgb(152, 152, 152)">Back</a ></div>       
+    </div>
+    <script type="text/javascript">
+        var num = parseInt(Math.random() * 5 + 1);
+        document.body.style.backgroundImage = "url(http://cdn.maxjia.com/image/p_0" + num + ".jpg)";
+    </script>
+</div>

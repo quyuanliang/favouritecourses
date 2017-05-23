@@ -1,0 +1,340 @@
+* {
+  margin: 0px;
+}
+.header{
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  background: url("../img/menu_pattern_3.jpg");
+}
+.title{
+  color: snow;
+  font-family: Impact;
+  font-size: 30px;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.login{
+  float: right;
+  padding-right: 30px;
+  padding-top: 15px;
+  font: 17px bold Sans;
+  color: snow;
+}
+.login a{
+  text-decoration: none;
+}
+.login a:hover{
+  color: snow;
+  text-decoration: underline;
+}
+.login a:active{
+  color: snow;
+}
+.login a:visited{
+  color: snow;
+}
+.sidebar {
+  width: 310px;
+  height: 100%;
+  position: fixed;
+  margin-top: 70px;
+  background: url("../img/menu_pattern_3.jpg");
+  border-right: 10px solid #d00355;
+}
+.sidebar ul {
+  margin-top: 20px;
+}
+.sidebar li {
+  list-style: none;
+  padding: 10px;
+  position: relative;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #555;;
+  font: 14px Open Sans;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1000;
+}
+.sidebar .hover {
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #d00355;
+  z-index: 0;
+  opacity: 0;
+}
+.sidebar a:hover {
+  color: #FFF;
+}
+.sidebar .fa-angle-right {
+  position: absolute;
+  left: 220px;
+  top: 1px;
+}
+.sidebar .sub-menu {
+  position: absolute;
+  left: 270px;
+  top: -30px;
+  padding: 0px;
+  width: 300px;
+  display: none;
+  background: url("../img/menu_pattern_3.jpg");
+}
+.sidebar .sub-menu li a {
+  padding-left: 20px;
+  font-size: 13px;
+}
+.sidebar .sub-menu i {
+  left: 230px;
+}
+.sidebar ul li:hover ul {
+  display: block;
+}
+.sidebar .push {
+  margin-right: 10px;
+}
+.sidebar ul p{
+  width: 230px;
+}
+
+.main-content{
+  margin-left: 320px;
+  overflow:hidden;
+}
+h1 {
+  color: #d00355;
+  font: 20px Open Sans;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+
+.color {
+  color: #d00355;
+}
+h2{
+  padding-left: 30px;
+  padding-top: 20px;
+  font: 16px Open Sans;
+  color: #d00355;
+}
+.course-container{
+  margin-left: 20px;
+  height: auto;
+}
+.course-title{
+  color: black;
+  font-family: Tahoma;
+  font-size: 30px;
+  padding-top: 90px;
+  padding-left: 40px;
+}
+.course-rate{
+  color: #d00355;
+  padding-left: 30px;
+  font-size: 30px;
+}
+.course-info{
+  color: black;
+  padding-top: 20px;
+  padding-left: 100px;
+}
+.course-info-table td{
+  margin-right: 20px;
+}
+.rate-button{
+  float: left;
+  display: block;
+  height: 30px;
+  width: 180px;
+  color: #fff;
+  font-family: "league_gothicregular";
+  font-size: 20px;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  margin-left: 40px;
+  margin-top: 20px;
+  background-color: #d00355;
+}
+.comments-table-container {
+  float: left;
+  width: 100%;
+  margin-top: 30px;
+  height:auto;
+}
+.comments-table{
+  width: 100%;
+  font-family: "Source Sans Pro";
+  color: #333333;
+  border:none;
+}
+.comments-table .odd{
+  background-color: #F3F3F3;
+}
+.comments-table .even{
+  background-color: #E5E5E5;
+}
+.comments-table .rating {
+  vertical-align: top;
+  font-family: "Source Sans Pro";
+  font-size: 25px;
+  text-align: center;
+  width: 25%;
+}
+.comments-table .rating .rating-container{
+  padding-top: 5px;
+  font-size: 16px;
+}
+.comments-table .comment{
+  vertical-align: top;
+  font-family: "Source Sans Pro";
+  font-size: 20px;
+  padding: 14px 14px 14px 30px;
+}
+.comments-table .comment .comment-date{
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.comment-form{
+  float: left;
+  width: 100%;
+  margin-top: 30px;
+  margin-left: 30px;
+  height:auto;
+}
+.headline {
+  font-family: "Source Sans Pro";
+  font-size: 24px;
+  padding-left: 30px;
+  padding-top: 10px;
+}
+.form-element{
+  overflow: hidden;
+  clear: both;
+  margin-left: 70px;
+}
+.stars span{
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  margin-left: 20px;
+  margin-right: 10px;
+  cursor:default;
+}
+.stars input{
+  float: left;
+  height: 50px;
+  line-height: 50px;
+  border: 0px;
+  color: #d00355;
+  font-size: 25px;
+}
+.stars i{
+  float: left;
+  margin-right: 2px;
+  color: #dedede;
+  text-align: center;
+  cursor:default;
+  font-size: 40px;
+  font-style: normal;
+}
+.stars .on {
+  color: #ffe12d;
+}
+.comment-input textarea{
+  width: 550px;
+  margin-top: 5px;
+  height: 130px;
+  padding: 12px;
+  color: #505050;
+  font-size: 15px;
+  font-family: "Source Sans Pro";
+  line-height: 21px;
+  border-radius: 0px;
+}
+.comment-form .rate-submit{
+  float: left;
+  display: block;
+  height: 40px;
+  width: 150px;
+  color: #fff;
+  font-family: "league_gothicregular";
+  font-size: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 40px;
+  margin-top: 20px;
+  background-color: #d00355;
+}
+.course-list-container{
+  margin-left: 50px;
+  height: auto;
+}
+.course-list-container .university{
+  color: black;
+  font-family: Tahoma;
+  font-size: 30px;
+  padding-top: 110px;
+  padding-left: 40px;
+}
+.course-list-container .course-list{
+  margin-top: 30px;
+  height: auto;
+}
+
+.course-list-container .course-list li a:link,
+.course-list-container .course-list li a:visited,
+.course-list-container .course-list li a:active{
+  text-decoration: none;
+  color: #d00355;
+  font-size: 25px;
+}
+.course-list-container .course-list li a:hover{
+  text-decoration: underline;
+  color: #d00355;
+  font-size: 25px;
+}
+
+.favorite-container{
+  margin-left: 20px;
+}
+.unliked{
+	color: #dedede;
+}
+.favorite-submit{
+  text-align: center;
+  cursor:pointer;
+  font-family: "league_gothicregular";
+  font-size: 25px;
+  font-style: normal;
+  border: none;
+  background: none;
+}
+
+.lo{ display:inline} 
+
+ .btn {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 18px;
+        background-color: rgb(70, 175, 95);
+        background-color: rgba(70, 175, 95, 0.9);
+        color: #fff;
+        border-radius: 2px;
+        width: 178px;
+        height: 38px;
+        top: 50%;
+        overflow: hidden;
+        white-space: nowrap;
+        -webkit-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        -moz-transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        transition: all .25s cubic-bezier(.165, .84, .44, 1), opacity 1ms linear;
+        cursor: pointer;
+}

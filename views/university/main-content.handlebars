@@ -1,0 +1,123 @@
+<div class="course-container">
+    <div class="course-title">
+        <span class="course-number">{{courseNumber}} </span>
+        <span class="course-name"> {{name}} </span>
+        <span class="course-rate">{{totalRating}}</span>
+            <form class="favorite-course" method="post" name="favoriteCourses" id="favoriteCourses" action="/university/addFavorite">
+                <input name="favouritecCourseNumber" value="{{courseNumber}}" hidden>
+                <input name="lastUrl" value="{{theUrl}}" hidden>
+                <input name="isLiked" value="{{isLiked}}" hidden>
+                <input name="tryAlert" value="{{loginuser._id}}" hidden>
+                {{#if isLiked}}
+                    <button type="submit" id="favorite-submit"  onclick="hint(tryAlert.value)" class="favorite-submit color">Like it ❤</button>
+                {{else}}
+                <button type="submit" id="favorite-submit"  onclick="hint(tryAlert.value)" class="favorite-submit unliked">Like it ❤</button>
+            {{/if}}
+            </form>
+    </div>
+    <div class="course-info">
+        <table class="course-info-table">
+            <tr class="university">
+                <td><span class="color">UNIVERSITY: </span></td>
+                <td>{{universityName}}</td>
+            </tr>
+            <tr class="professor">
+                <td><span class="color">PROFESSOR: </span></td>
+                <td>{{professor}}</td>
+            </tr>
+            <tr class="textbook">
+                <td><span class="color">TEXTBOOK: </span></td>
+                <td>
+                    {{#if textbooks}}
+                    <ul id="textbooks">
+                        {{#each textbooks}}
+                        <li>{{this}}</li>
+                        {{/each}}
+                    </ul>
+                    {{else}} N/A {{/if}}
+                </td>
+            </tr>
+            <tr class="subject">
+                <td><span class="color">SUBJECT: </span></td>
+                <td>{{subject}}</td>
+            </tr>
+            <tr class="description">
+                <td><span class="color">DESCRIPTION: </span></td>
+                <td>{{description}}</td>
+            </tr>
+        </table>
+    </div>
+    <a href="#rateCourseForm" class="rate-button">Rate This Course</a>
+</div>
+<div class="comments-table-container">
+    <table class="comments-table">
+        <tbody>
+            {{#if comments}} {{#each comments}} {{#if commentIdIsOdd}}
+            <tr class="odd">
+                <td class="rating">
+                    <div class="user-name">{{username}}</div>
+                    <div class="rating-container">
+                        <span class="descriptor">Rating</span>
+                        <span class="score color">{{rating}}</span>
+                    </div>
+                </td>
+                <td class="comment">
+                    <div class="comment-content">{{content}}</div>
+                    <div class="comment-date">{{date}}</div>
+                </td>
+            </tr>
+            {{else}}
+            <tr class="even">
+                <td class="rating">
+                    <div class="user-name">{{username}}</div>
+                    <div class="rating-container">
+                        <span class="descriptor">Rating</span>
+                        <span class="score color">{{rating}}</span>
+                    </div>
+                </td>
+                <td class="comment">
+                    <span class="comment-content">{{content}}</span>
+                    <br><span class="comment-date">{{date}}</span>
+                    {{!--<a href="/search" class="comment-date">Delete</a>--}}
+                </td>
+            </tr>
+            {{/if}} {{/each}} {{/if}}
+        </tbody>
+    </table>
+</div>
+<div class="comment-form">
+    <form class="rate" method="post" name="rateCourseForm" id="rateCourseForm" action="/comments/addComment">
+        <div class="headline">It's your turn to rate {{courseNumber}}.</div>
+        <input name="courseId" value="{{courseIdd}}" hidden>
+        <input name="lastUrl" value="{{theUrl}}" hidden>
+        <input name="tryAlert" value="{{loginuser._id}}" hidden>
+        <div class="form-element stars required">
+            <span>Rate the course：</span>
+            <i class="" score="1">★</i>
+            <i class="" score="2">★</i>
+            <i class="" score="3">★</i>
+            <i class="" score="4">★</i>
+            <i class="" score="5">★</i>
+            <span>Your rate is:</span>
+            <input name="scores">
+        </div>
+        <div class="form-element comment-box required">
+            <div class="comment-text">Write your comment below.</div>
+            <div class="comment-input">
+                <textarea id="comments" name="comments" required="" maxlength="500"></textarea>
+            </div>
+        </div>
+        <button type="submit" onclick="hint(tryAlert.value)" class="rate-submit" value="Submit">Submit</button>
+        
+    </form>
+</div>
+
+<script type="text/javascript">
+function hint(sb)
+{
+    if(sb){
+    }else{
+        alert("Please login ! !");
+    }
+}
+</script>

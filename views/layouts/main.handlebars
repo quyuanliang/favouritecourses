@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>home</title>
+    <link rel="stylesheet" href="/public/css/style.css" media="screen" type="text/css" >
+</head>
+
+<body>    
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <div class="header">
+        <div class="title"><a style="color:snow" href="/search">Course friends</a>
+            <div class="login">
+                <div id='cssmenu' role="navigation">
+                    <ul>
+                        {{#if loginuser}}
+                            <li class="lo">
+                                <form action="/user/logout" method="post" style="float:right">
+                                    <input name="lastUrl" value="{{theUrl}}" hidden>
+                                    <button type="submit" style="font-size: 20px;font-weight: 500;line-height: 8px;background-color: rgb(0,0,0); background-color: rgba(0,0,0,0);color: snow;width: 180px;height: 38px;margin-right: 20px;overflow: hidden;" value="">Log Out</button>
+                                </form>
+                            </li>
+                            <li class="lo">
+                                <form action="/user/profile" method="post" style="float:left">
+                                    <input value="{{loginuser._id}}" name="uid" hidden>
+                                    <button type="submit" style="font-size: 20px;font-weight: 500;line-height: 8px;background-color: rgb(0,0,0); background-color: rgba(0,0,0,0);color: snow;width: 180px;height: 38px;margin-right: 20px;overflow: hidden;">manage profile</button>
+                                </form>
+                            </li>
+                        {{else}}
+                        <form action="/user/loginPage" method="post">
+                            <input name="lastUrl" value="{{theUrl}}" hidden>
+                            <button type="submit" value="" style="font-size: 20px;font-weight: 500;line-height: 8px;background-color: rgb(0,0,0); background-color: rgba(0,0,0,0);color: snow;width: 180px;height: 38px;margin-right: 20px;overflow: hidden;">Login/Sign Up</button>
+                        </form>
+                        {{/if}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar">
+        <h1 style="color:snow"><i class="fa fa-bars push"></i>Departments</h1>
+        {{#if departmentList}}
+        <ul>
+            {{#each departmentList}}
+            <li><a href="#">{{department}}<i class="fa fa-angle-right"></i></a><span class="hover"></span> {{#if courses}}
+                <ul class="sub-menu">
+                    {{#each courses}}
+                    <li><a href="/university/{{university}}/courses/{{_id}}">{{courseNumber}} {{name}}</a><span class="hover"></span></li>
+                    {{/each}}
+                </ul>
+                {{/if}}
+            </li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+    <div class="main-content">
+        {{{body}}}
+    </div>
+    <script src='/public/js/jquery.js'></script>
+    <script src="/public/js/index.js"></script>
+    <script src="/public/js/star-rate.js"></script>
+</body>
+
+</html>

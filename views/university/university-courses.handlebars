@@ -1,0 +1,15 @@
+<div class="course-list-container">
+    <div class="university">
+        {{university}}
+        Course List
+    </div>
+    <div class="course-list">
+        {{#if UniversityCourseList}}
+        <ul>
+            {{#each UniversityCourseList}}
+                <li class="color"><a href="/university/{{university}}/courses/{{_id}}">{{courseNumber}} {{name}}</a></li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+</div>
