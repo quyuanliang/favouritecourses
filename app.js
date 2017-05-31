@@ -1,4 +1,5 @@
 const express = require("express");
+const static = express.static(__dirname + '/public');
 const bodyParser = require("body-parser");
 const dbConnection = require("./config/mongoConnection");
 const cookieParser = require("cookie-parser");
@@ -6,12 +7,14 @@ const passport = require("passport");
 const flash = require("connect-flash");
 const session = require("express-session");
 const app = express();
-const static = express.static(__dirname + '/public');
 const exphbs = require('express-handlebars');
 const Handlebars = require('handlebars');
 const configRoutes = require("./routes");
 const pkg = require('./package');
 
+
+//设置静态文件目录
+app.use("/public", static);
 
 const handlebarsInstance = exphbs.create({
     defaultLayout: 'main',
@@ -41,8 +44,6 @@ const rewriteUnsupportedBrowserMethods = (req, res, next) => {
 };
 
 app.use(rewriteUnsupportedBrowserMethods);
-//设置静态文件目录
-app.use("/public", static);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.engine('handlebars', handlebarsInstance.engine);
