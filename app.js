@@ -71,7 +71,7 @@ configRoutes(app);
 
 // 监听端口，启动程序
 
-let port = process.env.PORT || 5000;
+let port = process.env.PORT || 3000;
 app.listen(port, function () {
   console.log("1111111");
 });
