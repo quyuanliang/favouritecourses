@@ -12,8 +12,6 @@ const Handlebars = require('handlebars');
 const configRoutes = require("./routes");
 const pkg = require('./package');
 
-
-console.log("000000000000000");
 //设置静态文件目录
 app.use("/public", static);
 
@@ -43,7 +41,7 @@ const rewriteUnsupportedBrowserMethods = (req, res, next) => {
     // let the next middleware run:
     next();
 };
-console.log("111111111111111");
+
 app.use(rewriteUnsupportedBrowserMethods);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -65,7 +63,6 @@ app.use(flash());
 app.engine('handlebars', handlebarsInstance.engine);
 //设置模板引擎为handlebars
 app.set('view engine', 'handlebars');
-console.log("22222222222222");
 require('./routes/index')(app, passport);
 require('./routes/passport')(passport);
 

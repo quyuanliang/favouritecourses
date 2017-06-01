@@ -10,7 +10,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "pm2 start app.js --node-args='--harmony' --name 'favouritecourses'",
     "stop": "pm2 stop app.js",
-    "heroku": "pm2 start app.js --node-args='--harmony' --name 'favouritecourses'"
+    "heroku": "node --harmony app"
   },
   "author": "Yuanliang Qu",
   "license": "ISC",
