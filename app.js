@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const static = express.static(__dirname + '/public');
 const bodyParser = require("body-parser");
 const dbConnection = require("./config/mongoConnection");
