@@ -15,6 +15,8 @@ const pkg = require('./package');
 //设置静态文件目录
 app.use("/public", static);
 
+
+//设置handlebar实例
 const handlebarsInstance = exphbs.create({
     defaultLayout: 'main',
     helpers: {
@@ -45,6 +47,7 @@ const rewriteUnsupportedBrowserMethods = (req, res, next) => {
 app.use(rewriteUnsupportedBrowserMethods);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+//设置handlebars
 app.engine('handlebars', handlebarsInstance.engine);
 app.set('view engine', 'handlebars');
 app.use(cookieParser());
